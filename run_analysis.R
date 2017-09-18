@@ -41,7 +41,7 @@ train["activity_label"]<-activity[index,2]
 total<-rbind(train,test)
 
 #5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-act<-group_by(total,activity_label,subject)
+act<-group_by(total,subject,activity_label)
 subset<-summarize(act
           ,`tBodyAcc-mean()-X`		  =mean(`tBodyAcc-mean()-X`		  )
           ,`tBodyAcc-mean()-Y`          =mean(`tBodyAcc-mean()-Y`          )
